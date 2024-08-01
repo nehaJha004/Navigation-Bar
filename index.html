@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+        body{
+            background: #bce2ff;
+        }
+        nav{
+            width: 100%;
+            background-color: #ecf0f3;
+            padding: 12px 0;
+            box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+        }
+        nav .menu{
+            max-width: 1270px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu .logo a{
+            font-size: 28px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #31344b;
+        }
+        .menu ul{
+            list-style: none;
+            display: flex;
+        }
+        .menu ul a{
+            margin: 0 8px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #31344b;
+            font-weight: 400;
+            display: inline-flex;
+            padding: 10px 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .menu ul a:hover::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: -3px -3px 7px #ffffff,
+            3px 3px 5px #ceced1;
+        }
+        #logo{
+            color: #3498db;
+        }
+        .menu ul a:hover{
+            color: #3498db;
+        }
+        nav label.button{
+            color: #31344b;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        nav label.cancel{
+            position: absolute;
+            top: 25px;
+            right: 30px;
+        }
+        .cancel, .bars{
+            display: none;
+        }
+        #check{
+            display: none;
+        }
+        @media (max-width:940px) {
+            .menu ul{
+                display: block;
+                position: fixed;
+                top: 0;
+                right: 100%;
+                width: 100%;
+                max-width: 400px;
+                padding-top: 45px;
+                height: 100%;
+                background: #ecf0f3;
+                box-shadow: 0 5px 10px #b0b0b5;
+                z-index: 12;
+                transition: all 0.5s ease-in-out;
+            }
+            .menu ul a{
+                display: block;
+                font-size: 23px;
+                width: 100%;
+                margin-top: 30px;
+                box-shadow: none;
+                text-align: center;
+            }
+            .menu ul a:hover::before{
+                box-shadow: none;
+            }
+            nav label.bars{
+                display: block;
+            }
+            #check:checked ~ label.bars{
+                display: none;
+            }
+            #check:checked ~ ul label.cancel{
+                display: block;
+            }
+            #check:checked ~ ul{
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <input type="checkbox" id="check">
+            <div class="logo"><a id="logo" href="#">Practice CSS</a></div>
+            <ul>
+                <label class="button cancel" for="check"><i class="fa fa-times"></i></label>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            </ul>
+            <label class="button bars" for="check"><i class="fa fa-bars"></i></label>
+        </div>
+    </nav>
+</body>
+</html>
